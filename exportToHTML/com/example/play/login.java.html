@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>login.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+login.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.play</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">login </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s0">public </span><span class="s1">EditText username</span><span class="s0">,</span><span class="s1">password</span><span class="s0">;</span>
+    <span class="s1">Button loginbut</span><span class="s0">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_login)</span><span class="s0">;</span>
+
+        <span class="s1">username = (EditText) findViewById(R.id.uname)</span><span class="s0">;</span>
+        <span class="s1">password = findViewById(R.id.pass)</span><span class="s0">;</span>
+        <span class="s1">loginbut = findViewById(R.id.loginbutton)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">onLogin(View view){</span>
+            <span class="s1">Intent it = </span><span class="s0">new </span><span class="s1">Intent(login.</span><span class="s0">this, </span><span class="s1">ValidateService.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">it.putExtra(</span><span class="s2">&quot;username&quot;</span><span class="s0">, </span><span class="s1">username.getText().toString())</span><span class="s0">;</span>
+            <span class="s1">it.putExtra(</span><span class="s2">&quot;password&quot;</span><span class="s0">, </span><span class="s1">password.getText().toString())</span><span class="s0">;</span>
+
+            <span class="s1">startService(it)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+
+<span class="s1">}</span></pre>
+</body>
+</html>

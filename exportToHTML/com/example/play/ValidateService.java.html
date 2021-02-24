@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>ValidateService.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ValidateService.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.play</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.app.Service</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.IBinder</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">ValidateService </span><span class="s0">extends </span><span class="s1">Service {</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">IBinder onBind(Intent intent) {</span>
+        <span class="s2">// TODO: Return the communication channel to the service.</span>
+        <span class="s0">throw new </span><span class="s1">UnsupportedOperationException(</span><span class="s3">&quot;Not yet implemented&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+        <span class="s0">public int </span><span class="s1">onStartCommand (Intent intent</span><span class="s0">,int </span><span class="s1">flags</span><span class="s0">,int </span><span class="s1">startID) {</span>
+            <span class="s1">String uname = intent.getExtras().getString(</span><span class="s3">&quot;username&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">String pass = intent.getExtras().getString(</span><span class="s3">&quot;password&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+
+            <span class="s0">if </span><span class="s1">(uname.equals(</span><span class="s3">&quot;Vishwa&quot;</span><span class="s1">) &amp;&amp; pass.equals(</span><span class="s3">&quot;remo&quot;</span><span class="s1">)) {</span>
+                <span class="s1">Intent it = </span><span class="s0">new </span><span class="s1">Intent(ValidateService.</span><span class="s0">this, </span><span class="s1">MainActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)</span><span class="s0">;</span>
+                <span class="s1">startActivity(it)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">return </span><span class="s1">flags</span><span class="s0">;</span>
+        <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
